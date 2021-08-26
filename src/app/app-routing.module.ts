@@ -13,7 +13,16 @@ const routes: Routes = [
   },
   {
     path: 'offer-list',
-    loadChildren: () => import('./offer-list/offer-list.module').then( m => m.OfferListPageModule)
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./offer-list/offer-list.module').then( m => m.OfferListPageModule)
+      },
+      {
+        path: ':offerId',
+        loadChildren: () => import('./offer-list/offer-details/offer-details.module').then( m => m.OfferDetailsPageModule)
+      }
+    ]
   },
 ];
 

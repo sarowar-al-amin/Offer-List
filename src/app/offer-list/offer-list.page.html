@@ -13,9 +13,9 @@
         <ion-list>
           <ion-item
           *ngFor="let offer of offerList"
-          [routerLink]="['/','test-list', offer.id]"
+          [routerLink]="['/','offer-list', offer.id]"
           >
-            <ion-thumbnail slot="start" style="height: content-fit;">
+            <ion-thumbnail slot="start">
               <ion-img [src]="offer.imageUrl"></ion-img>
             </ion-thumbnail>
             <ion-label>
@@ -24,8 +24,7 @@
                 <!-- <ion-button color="light"> <span style="color: red;">Live</span></ion-button> -->
                 <span style="color: red; float: right; font-size: smaller;">Live</span>
               </h2>
-              <h3>{{ offer.subtitle}}</h3>
-              <h4>{{offer.date}}</h4>
+              <h4>{{ offer.subtitle}}</h4>
               <h6>{{ offer.description }}</h6>
             </ion-label>
           </ion-item>
